@@ -105,7 +105,6 @@ class economy(commands.Cog):
 
     @commands.command()
     async def rob(self, ctx, victim: discord.Member, amount:int):
-        
         robber = ctx.author.id
         robbed = random.randint(0,1)
         await self.bank_check(ctx, bank, robber)
@@ -125,11 +124,6 @@ class economy(commands.Cog):
                 em = discord.Embed(color = 0x2ecc71, name='SUCCESS')
                 em.add_field(name='ALERT', value = 'You succeeded. {}🪙 Stolen'.format(amount))
                 await ctx.send(embed = em)
-
-            
-
-
-
 
 
     async def bank_check(self, ctx, bank, user):
