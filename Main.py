@@ -12,7 +12,7 @@ client = commands.Bot(command_prefix=get_prefix, intents = discord.Intents.all()
 
 client.remove_command("help")
 
-os.chdir(r'/Users/HomenHoma/MyCodingProjects/Discord python /')
+os.chdir(r'/Users/HomenHoma/MyCodingProjects/Discord python /discordBotPython')
 
 with open('users.json', 'r') as f:
     users = json.load(f)
