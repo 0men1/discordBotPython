@@ -103,13 +103,42 @@ class economy(commands.Cog):
             em.add_field(name='ACTION', value = 'You have withdrawn {}🪙'.format(amount))
             await ctx.send(embed = em)
 
+    @commands.command()
+    async def rob(self, ctx, victim: discord.Member, amount:int):
+        
+        robber = ctx.author.id
+        robbed = random.randint(0,1)
+        await self.bank_check(ctx, bank, robber)
+        await self.peer_bank_check(ctx, bank, victim.id)
+        if bank[f'{victim.id}']['Wallet'] < amount:
+            em = discord.Embed(color = 0x992d22, name='WARNING')
+            em.add_field(name='ACTION', value = 'They do not have that much money in their pocket')
+            await ctx.send(embed = em)
+        else:
+            if robbed == 0:
+                em = discord.Embed(color = 0xe74c3c, name='WARNING')
+                em.add_field(name='ALERT', value = 'You were caught and sent to jail')
+                await ctx.send(embed = em)
+            else:
+                bank[f'{victim.id}']['Wallet'] -= amount
+                bank[f'{robber}']['Wallet'] += amount
+                em = discord.Embed(color = 0x2ecc71, name='SUCCESS')
+                em.add_field(name='ALERT', value = 'You succeeded. {}🪙 Stolen'.format(amount))
+                await ctx.send(embed = em)
+
+            
+
+
+
 
 
     async def bank_check(self, ctx, bank, user):
         if not f'{user}' in bank:
             await ctx.send('You are not registered')
 
-
+    async def peer_bank_check(self,ctx,bank,user):
+        if not f'{user}' in bank:
+            await ctx.send('They are not registered')
 
     async def add_money_wallet(self, bank, user, amount):
         bank[f'{user.id}']['Wallet'] += amount
