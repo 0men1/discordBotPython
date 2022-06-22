@@ -3,6 +3,8 @@
 
 Basic Discord bot made with Python3
 
+Add the bot to your server: https://discord.com/api/oauth2/authorize?client_id=533477025449771031&permissions=8&scope=bot
+
 Default Prefix: !
 
 Commands:
@@ -14,3 +16,4 @@ Commands:
 !avatar or !av (@username) [To reveal @username's profile picture]
 
 !
+
