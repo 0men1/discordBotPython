@@ -12,7 +12,7 @@ client = commands.Bot(command_prefix=get_prefix, intents = discord.Intents.all()
 
 client.remove_command("help")
 
-os.chdir(r'/Users/HomenHoma/MyCodingProjects/Discord python /discordBotPython')
+os.chdir(r'/Users/HomenHoma/MyCodingProjects/Discordpy/discordBotPython')
 
 with open('users.json', 'r') as f:
     users = json.load(f)
@@ -93,4 +93,4 @@ async def on_message(message):
         return
 
 #---------------------------------------------------------------------------- END ---------------------------------------------------------
-client.run('NTMzNDc3MDI1NDQ5NzcxMDMx.GiELI1.4tNMehTlGTL4FHuU2PmLxzzTb703DhpKyvtg4k')
+client.run('NTMzNDc3MDI1NDQ5NzcxMDMx.G44v8W.Itr9OkdwKZTjDf9y0HJo5tce_aX_Jzw4lkFQWA')
