@@ -34,11 +34,17 @@ class ServerFunctions(commands.Cog):
     async def help(self, ctx):
         embed = discord.Embed(color = 0x992d22, title ='HELP', description="Explanation of everything I can do")
         embed.set_author(name = ctx.author.display_name, icon_url=ctx.author.avatar_url)
+
+        
         embed.add_field(name="Ping", value="This will return pong", inline=True)
         embed.add_field(name="ban (user)", value="This will ban a member of your server. You must include a reason. \n EXAMPLE: !ban @user (reason)", inline=True)
-        embed.add_field(name="unban (user)", value="This will unban a member of your server. You must include a reason. \n EXAMPLE:!unban DJ Z #9329", inline=True)
+        embed.add_field(name="unban (user)", value="This will unban a member of your server. You must include a reason. \n EXAMPLE:!unban Commander Panda #0878", inline=True)
         embed.add_field(name="setGame or game or changeGame", value="This will change the game that I am playing at this current moment. \n EXAMPLE: !setGame Valorant or !game Valorant or !changeGame valorant", inline=True)
-        embed.add_field(name="avatar or av", value="Checks the avatar of the mentioned user \n EXAMPLE: !av @DJ Z or !avatar @DJ Z")
+        embed.add_field(name="avatar or av", value="Checks the avatar of the mentioned user \n EXAMPLE: !av @Commander Panda or !avatar @Commander Panda")
+
+
+
+
         await ctx.send(embed = embed)
 
     @commands.command(aliases=['av'])
